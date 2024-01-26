@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Дизель</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main_style.css">
+    <link rel="stylesheet" href="styles/cabinet.css">
+  </head>
+  <body>
+    <div class="headler">
+        <!-- Навигационная панель -->
+        <div class="container-fluid nav-panel">
+            <ul class="nav nav-fill">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../catalog/catalog.html">Каталог</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../help/payment.html">Оплата</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../help/delivery.html">Доставка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../help/return.html" tabindex="-1" aria-disabled="true">Возврат</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Контакты
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../help/about.html">О нас</a></li>
+                  <li><a class="dropdown-item" href="doc/requisites.pdf">Реквизиты</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+        <!-- Шапка сайта -->
+        <div class="container-fluid">
+            <div class="row">
+              <!-- Логотип -->
+              <div class="col-3" id="logo">
+                <a href="home.html">
+                  <img src="images/logo16_9.png" class="img-fluid" alt="">
+                </a>
+              </div>
+              <div class="col-9">
+                <!-- Первый ряд -->
+                <div class="row">
+                  <div class="col-4 calls mx-auto">
+                    <img src="images/phone_icon.png" alt="Значок телефона" sizes="" srcset="">
+                    <a class="call" href="tel:+79180457345">+7-918-045-73-45</a>
+                  </div>
+                  <div class="col-4 messengers" >
+                    <div class="row">
+                      <div class="col-2">
+                        <a href="https://api.whatsapp.com/send/?phone=7180457345" class="whatsapp"><img src="images/icon-whatsapp.png" alt="Значок Whatsapp"></a>
+                      </div>
+                      <div class="col-4 text_messengers">
+                        <p>Напишите нам в Whatsapp</p>
+                      </div>
+                      <div class="col-2">
+                        <a href="tg://resolve?domain=Kuban_diesel" class="telegram"><img src="images/icon-telegram.png" alt="Значок Telegram"></a>
+                      </div>
+                      <div class="col-4 text_messengers">
+                        <p>Найдите нас в Telegram</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="btn btn-info btn-lg" data-bs-toggle="modal" data-bs-target="#modal_call_me">Перезвоните мне!</button>
+                    <div class="modal fade" id="modal_call_me" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Мы свяжемся с Вами в ближайшее время!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <input type="text" class="form-control input_user_name" placeholder="Как к вам обращаться?" aria-label="name_user" aria-describedby="button-addon2">
+                            <input type="text" class="form-control input_user_phone" placeholder="Введите номер телефона." aria-label="phone_user" aria-describedby="button-addon2">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                            <button type="button" class="btn btn-primary">Подтвердить</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Ворой ряд -->
+                <div class="row " id="second_row">
+                  <div class="col-8 align-self-center">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Введите артикул или название запчасти" aria-label="find" aria-describedby="button-addon2" readonly onfocus="this.removeAttribute('readonly')">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Поиск</button>
+                    </div>
+                  </div>
+                  <div class="col-2 align-self-center private_office">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#office">
+                      Личный кабинет
+                    </button>
+                  </div>
+                  <!-- Вход в личный кабинет -->
+                  <div class="modal fade registration" id="office" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered ">
+                      <div class="modal-content">
+                        <div class="container-fluid">
+                          <div class="row head">
+                            <h3>Авторизация</h3>
+                          </div>
+                          <div class="row">
+                            <div class="input-group">
+                              <span class="input-group-text" id="email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                </svg>
+                              </span>
+                              <input type="text" class="form-control" placeholder="Введите email" aria-label="Input group example" aria-describedby="basic-addon1">
+                            </div>
+                          </div>
+                            <div class="input-group">
+                              <span class="input-group-text" id="key">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+                                </svg>
+                              </span>
+                              <input type="password" class="form-control" placeholder="Введите пароль" aria-label="Input group example" aria-describedby="basic-addon1">
+                            </div>
+                          <div class="remember-forgot">
+                            <div class="row">
+                              <div class="col">
+                                <label><input type="checkbox">
+                                Запомнить меня
+                                </label>
+                              </div>
+                            <div class="col text-end">
+                              <a href="../auth/forgot_password.html">Забыли пароль?</a>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="enter-registration">
+                            <div class="row">
+                              <div class="col">
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">Вход</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col text-center">
+                                <div class="login-register">
+                                  <p>Нет аккаунта?
+                                    <a href="registration.html" class="registr-link">Регистрация</a>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Вход в личный кабинет -->
+                  <div class="col-2 align-self-center">
+                    <a href="../orders/basket.html" class="basket">
+                      <img src="images/icon-basket.png" alt="Корзина">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Контент -->
+    
+    <h1>Контент - Кабинет</h1>
+
+    <!-- Футтер -->
+    <div class="container-fluid footer bg-secondary text-white ">
+      <div class="row head_footer">
+        <div class="col-2"><strong>Меню</strong></div>
+        <div class="col-2"><strong>Контакты</strong></div>
+        <div class="col-6"><strong>Как до нас добраться</strong></div>
+        <div class="col-2"><strong>Мы работаем</strong></div>
+        <div class="col footer_line"><hr></div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <div class="menu">
+            <div class="row">
+              <a href="../catalog/catalog.html">Каталог</a>
+            </div>
+            <div class="row">
+              <a href="../help/payment.html">Оплата</a>
+            </div>
+            <div class="row">
+              <a href="../help/delivery.html">Доставка</a>
+            </div>
+            <div class="row">
+              <a href="../help/return.html">Возврат</a>
+            </div>
+            <div class="row">
+              <a href="../help/about.html">О нас</a>
+            </div>
+            <div class="row">
+              <a href="doc/requisites.pdf">Реквизиты</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="contact">
+            <b>Телефоны:<br>+7-918-045-73-45;<br>8-(86138)-7-34-68;<br>76920@mail.ru<br>192168, Краснодарский край, г.Кропоткин, ул. Шоссейная, д.81</b>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d785.8087963670085!2d40.54042266818112!3d45.423368531119515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40fa46878d98d089%3A0x8d9a88fa78de5a33!2z0JrRg9Cx0LDQvdGMINCU0LjQt9C10LvRjA!5e0!3m2!1sru!2sru!4v1680105564666!5m2!1sru!2sru" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="work_time">
+            <b>Понедельник-Суббота:<br>9.00-18.00<br>Воскресенье:<br>9.00-17.00</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+</html>

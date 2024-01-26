@@ -1,0 +1,29 @@
+/* content */
+.my-carousel{
+    max-width: 1215px;
+    padding: 0;
+    margin-top: 10px;
+}
+.my-carousel .carousel-item{
+    display: flex;
+    max-height: 600px;
+}
+.my-carousel .carousel-item img{
+    object-fit: cover;
+}
+.content{
+    margin: 10px 0px 10px 0px;
+    
+}
+.content a{
+    text-decoration: none;
+    color: black;
+}
+.content img{
+    max-height: 300px;
+}
+.logotype{
+    border: 0;
+    background: transparent;
+}
+/* content */

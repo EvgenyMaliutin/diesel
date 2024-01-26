@@ -1,0 +1,22 @@
+/* content */
+#pic{
+    padding-bottom: 10px;
+}
+#pic img{
+    display: block;
+    margin: auto;
+    max-width: 150px;
+}
+
+.del_product_icon{
+    border: 0;
+    background: transparent;
+}
+
+.your-swal-container-class {
+    /* Ваши стили здесь */
+    /* Например: */
+    max-width: 400px; /* задает максимальную ширину окна */
+}
+
+/* content */

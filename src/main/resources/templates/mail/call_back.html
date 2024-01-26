@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Перезвонить клиенту!'">VALUE</title>
+</head>
+<body>
+<div id="body">
+    <div id="div">
+        <h1 >Клиент отправил запрос на связь с ним!</h1>
+        <p th:text="'Имя клиента: ' + ${name}"></p>
+        <p th:text="'Телефон клиента: ' + ${phone}"></p>
+        <p th:text="'Запрос поступил в : ' + ${time_request} + ' г.'"></p>
+    </div>
+</div>
+</body>
+</html>

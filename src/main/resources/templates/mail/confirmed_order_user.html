@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Подтверждение заказа'">VALUE</title>
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 5px; /* Задайте нужное значение для зазора */
+        }
+    </style>
+</head>
+<body>
+<p>Благодарим за заказ в интернет-магазине Кубань Дизель!</p>
+<table>
+    <!-- Шапка таблицы -->
+    <tr>
+        <td>Каталожный номер</td>
+        <td align="center">Наименование товара</td>
+        <td align="center">Количество в заказе</td>
+        <td align="center">Сумма</td>
+    </tr>
+    <!-- Тело таблицы -->
+    <tr th:each="product : ${order.getProducts()}">
+        <td th:text="${product.getProduct().getCatalogNumber()}">Каталожный номер</td>
+        <td th:text="${product.getProduct().getName()}">Наименование товара</td>
+        <td align="center" th:text="${product.getAmount()}">Количество в заказе</td>
+        <td align="center" th:text="${#numbers.formatDecimal(product.getProduct().getPrice() * product.getAmount(), 0, 2)} + ' руб.'">Сумма</td>
+    </tr>
+</table>
+<hr>
+<div>
+    <p th:text="'Общая сумма заказа: ' + ${order.getSum()} + ' руб.'"></p>
+</div>
+</body>
+</html>

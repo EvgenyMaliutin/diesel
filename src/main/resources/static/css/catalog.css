@@ -1,0 +1,11 @@
+/* content */
+#pic{
+    padding-bottom: 10px;
+}
+#pic img{
+    display: block;
+    margin: auto;
+    max-width: 150px;
+}
+
+/* content */

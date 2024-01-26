@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Благодарим за регистрацию, ' + ${user.getName()} + '!'">VALUE</title>
+</head>
+<body>
+<div id="body">
+    <div id="div">
+        <h1 style="text-align: center">Регистрация в интернет-магазине Кубань Дизель</h1>
+        <p th:text="'Здравствуйте, ' + ${user.getName()} + '!'"></p>
+        <p>Благодарим за регистрацию в интернет-магазине Кубань Дизель,</p>
+        <p>желаем Вам удачных покупок!</p>
+        <p>С уважением команда Кубань Дизель!</p>
+        <a id="a" href="http://localhost:8080/home">Скорее за покупками!</a>
+    </div>
+</div>
+</body>
+</html>

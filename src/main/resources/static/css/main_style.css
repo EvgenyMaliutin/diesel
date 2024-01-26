@@ -1,0 +1,114 @@
+html{
+    height: 100%;
+
+}
+
+body{
+    background-color: rgb(221, 221, 218);
+    height: 100%;
+}
+
+.page{
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1;
+}
+
+/* header */
+#logo img{
+    display: block;
+    margin: auto;
+    max-width: 350px;
+}
+
+.nav-panel .nav-link{
+    color: black;
+    font-size: 20px;
+}
+.calls{
+    text-align: center;
+}
+.calls a{
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align:middle;
+}
+.messengers{
+    text-align: center;
+}
+.messengers .whatsapp, .telegram{
+    padding: 10px;
+}
+.messengers img{
+    max-height: 40px;
+}
+.messengers .text_messengers{
+    
+    padding: 0px;
+    font-size: 12px;
+    text-align: left;
+    
+    
+    
+}
+.private_office{
+    text-align: center;
+    
+    
+}
+.private_office a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+.registration .head{
+    text-align: center;
+    margin: 1em;
+}
+.registration .remember-forgot{
+    margin: 10px;
+}
+.registration .login-register{
+    margin: 10px 0px 10px 0px;
+    vertical-align: middle;
+}
+
+.basket img{
+    display: block;
+    max-height: 40px;
+}
+#second_row{
+    margin-top: 10px;
+}
+.modal-body .input_user_phone{
+    margin-top: 10px;
+
+}
+/* header */
+
+/* futer */
+.footer .head_footer{
+    text-align: center;
+}
+.footer .footer_line{
+    margin-top: -10px;
+}
+.footer .menu a{
+    padding-left: 30px;
+    text-align: left;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+.footer .map{
+    text-align: center;
+}
+
+/* futer */

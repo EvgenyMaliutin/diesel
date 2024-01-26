@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Клиент оформил заказ'">VALUE</title>
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 5px; /* Задайте нужное значение для зазора */
+        }
+    </style>
+</head>
+<body>
+<h2>Клиент подтвердил заказ!</h2>
+    <!-- Данные о клиенте -->
+    <h3>Информация о клиенте:</h3>
+    <p th:text="'Имя клиента: ' + ${user.getName()}">Name</p>
+    <p th:text="'Контактный телефон: ' + ${user.getMobileNumber()}">Mobile</p>
+    <p th:text="'Email клиента: ' + ${user.getUsername()}">Email</p>
+    <br>
+    <h3>Данные о заказе</h3>
+    <p th:text="'Заказ № ' + ${order.getId()} + ' от ' + ${order.getDateFormat()}">Order info</p>
+<table>
+    <!-- Шапка таблицы -->
+    <tr>
+        <td>Каталожный номер</td>
+        <td align="center">Наименование товара</td>
+        <td align="center">Количество в заказе</td>
+        <td align="center">Сумма</td>
+    </tr>
+    <!-- Тело таблицы -->
+    <tr th:each="product : ${order.getProducts()}">
+        <td th:text="${product.getProduct().getCatalogNumber()}">Каталожный номер</td>
+        <td th:text="${product.getProduct().getName()}">Наименование товара</td>
+        <td align="center" th:text="${product.getAmount()}">Количество в заказе</td>
+        <td align="center" th:text="${#numbers.formatDecimal(product.getProduct().getPrice() * product.getAmount(), 0, 2)} + ' руб.'">Сумма</td>
+    </tr>
+</table>
+<hr>
+<div>
+    <p th:text="'Общая сумма заказа: ' + ${order.getSum()} + ' руб.'"></p>
+</div>
+</body>
+</html>
