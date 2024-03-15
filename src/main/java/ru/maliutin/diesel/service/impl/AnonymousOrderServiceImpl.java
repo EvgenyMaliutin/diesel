@@ -58,7 +58,6 @@ public class AnonymousOrderServiceImpl implements AnonymousOrderService {
         anonymousOrderProduct.setAmount(checkAmountInOrder(product, amount));
         anonymousOrderProduct.setAnonymousOrder(order);
         // Проверяем есть ли уже продукт в заказе клиента
-        // TODO возможно исправить сравнение товаров по объекту, а не по id
         Optional<AnonymousOrderProduct> productInOrderOptional = order.getProducts()
                 .stream()
                 .filter(prod -> prod.getProduct().getId() == anonymousOrderProduct.getProduct().getId())

@@ -75,7 +75,6 @@ public class OrderController{
                              @RequestHeader(value = "referer", required = false) String referer,
                              RedirectAttributes redirectAttributes) {
 
-        // TODO Исправить lastFind = null (как-то по-красивее)
         String lastFind = null;
         if (session.getAttribute("find") != null){
             lastFind = session.getAttribute("find").toString();
@@ -239,7 +238,6 @@ public class OrderController{
     @GetMapping("/merge")
     public String mergingOrders(HttpSession session, @AuthenticationPrincipal UserDetails userDetails){
         // Проверяем есть ли данные в сессии о id анонимного заказа
-        // TODO подправить логику (аутентификация Spring переправляет на этот метод(стоит разделить логику))
         if (session.getAttribute("id_anonymous_order") != null) {
             User user = userService.getByUsername(userDetails.getUsername());
             orderService.mergeOrders(user, Long.valueOf(session.getAttribute("id_anonymous_order").toString()));

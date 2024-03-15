@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Сущность пользователя.
  */
-@Data  // Автоматически создает геттеры, сеттеры, конструкторы, hashcode, equals;
+@Data
 @Entity
 @Table(name = "users")
 public class User {

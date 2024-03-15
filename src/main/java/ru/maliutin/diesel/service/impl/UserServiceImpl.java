@@ -55,8 +55,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User update(User user) {
-//         Кодируем сырой пароль пользователя при сохранении в БД
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return user;
     }

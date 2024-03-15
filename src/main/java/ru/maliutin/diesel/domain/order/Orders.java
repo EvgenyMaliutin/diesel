@@ -42,7 +42,10 @@ public class Orders {
     @Enumerated(value = EnumType.STRING)
     private Status orderStatus;
 
-    // Метод для расчета суммы заказа
+    /**
+     * Метод для расчета суммы заказа
+     * @return сумма заказа.
+     */
     public BigDecimal getSum() {
         if (products == null || products.isEmpty()) {
             return BigDecimal.ZERO;

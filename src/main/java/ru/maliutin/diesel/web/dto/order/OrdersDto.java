@@ -1,6 +1,5 @@
 package ru.maliutin.diesel.web.dto.order;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import ru.maliutin.diesel.domain.order.Status;
 import ru.maliutin.diesel.domain.product.Product;

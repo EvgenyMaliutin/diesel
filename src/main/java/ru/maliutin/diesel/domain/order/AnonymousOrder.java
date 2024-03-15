@@ -35,7 +35,10 @@ public class AnonymousOrder {
     @OneToMany(mappedBy = "anonymousOrder", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AnonymousOrderProduct> products;
 
-    // Метод для расчета суммы заказа
+    /**
+     *  Метод для расчета суммы заказа.
+     *  @return сумма заказа.
+     */
     public BigDecimal getSum() {
         if (products == null || products.isEmpty()) {
             return BigDecimal.ZERO; // или null, в зависимости от вашего выбора
@@ -46,7 +49,10 @@ public class AnonymousOrder {
                 .reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.UP);
     }
 
-    // Метод получения времени создания заказа в отформатированном виде
+    /**
+     * Метод получения времени создания заказа в отформатированном виде
+     * @return строковое представление времени заказа.
+     */
     public String getDateFormat() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         return this.date.format(formatter);
@@ -62,6 +68,10 @@ public class AnonymousOrder {
                 '}';
     }
 
+    /**
+     * Служебный метод получения товара, используется в toString();
+     * @return товар в строковом представлении.
+     */
     private String getProductsAsString() {
         if (products == null || products.isEmpty()) {
             return "[]";
@@ -74,7 +84,7 @@ public class AnonymousOrder {
                     .append(product.getAmount())
                     .append(", ");
         }
-        sb.delete(sb.length() - 2, sb.length()); // удалить последнюю запятую и пробел
+        sb.delete(sb.length() - 2, sb.length());
         sb.append("]");
 
         return sb.toString();

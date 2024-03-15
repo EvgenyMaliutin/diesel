@@ -53,13 +53,12 @@ public class AuthController {
      * @return объект пользователя.
      */
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute("user") @Valid UserDto userDto, BindingResult bindingResult,
-                               HttpServletResponse response){
+    public String registerUser(@ModelAttribute("user") @Valid UserDto userDto,
+                               BindingResult bindingResult){
         User user = userMapper.toEntity(userDto);
         userValidator.validate(user, bindingResult);
         if (bindingResult.hasErrors()){
             FieldError fields = bindingResult.getFieldError();
-            System.out.println(fields);
             return "auth/register";
         }
 
