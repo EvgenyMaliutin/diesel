@@ -11,6 +11,8 @@ services:
       - .env
     ports:
       - '8080:8080'
+    volumes:
+      - ${LOG_ADDRESS}:/logs
 
   db:
     image: postgres:15.1-alpine

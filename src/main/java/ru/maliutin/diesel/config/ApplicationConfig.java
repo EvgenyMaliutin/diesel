@@ -70,7 +70,7 @@ public class ApplicationConfig {
                         }))
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/home"));
+                        .logoutSuccessUrl("/"));
         return http.build();
     }
 }

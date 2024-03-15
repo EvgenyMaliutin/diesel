@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +24,7 @@ import ru.maliutin.diesel.service.UserService;
 import java.util.*;
 
 
+@Slf4j
 @Controller
 @AllArgsConstructor
 @RequestMapping("/orders")
@@ -168,6 +170,7 @@ public class OrderController{
             // Подтверждаем заказ
             orderService.changeStatusOrderById(orderId, Status.CONFIRMED);
             redirectAttributes.addFlashAttribute("confirm", true);
+            log.warn("Подтвержден заказ № " + orderId);
             return "redirect:/users/personal";
         }
         // Если пользователь не аутентифицирован

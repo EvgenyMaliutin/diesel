@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,7 @@ import ru.maliutin.diesel.web.utils.UserValidator;
 
 import java.util.UUID;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/auth")
@@ -58,11 +60,13 @@ public class AuthController {
         User user = userMapper.toEntity(userDto);
         userValidator.validate(user, bindingResult);
         if (bindingResult.hasErrors()){
-            FieldError fields = bindingResult.getFieldError();
+            log.warn("Ошибка при регистрации пользователя");
+            log.warn(bindingResult.getFieldErrors().toString());
             return "auth/register";
         }
 
         authService.registration(user);
+        log.warn("Создан новый пользователь: " + user.getName());
         return "redirect:/users/personal";
     }
 

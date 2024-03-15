@@ -39,3 +39,12 @@ spring:
 
 company:
   email: ${COMPANY_EMAIL}
+
+logging:
+  level:
+    root: ERROR
+    ru.maliutin.diesel.web.: WARN
+  pattern:
+    file: "%d %p %c{1.} [%t] %m%n"
+  file:
+    name: logs/diesel.log
