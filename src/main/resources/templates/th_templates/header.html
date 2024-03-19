@@ -31,39 +31,39 @@
     <div class="container-fluid">
       <div class="row">
         <!-- Логотип -->
-        <div class="col-3" id="logo">
+        <div class="col-12 col-xl-3" id="logo">
           <a th:href="@{/}">
             <img src="/images/logo16_9.png" class="img-fluid" alt="логотип">
           </a>
         </div>
-        <div class="col-9">
+        <div class="col-12 col-xl-9">
           <!-- Первый ряд -->
           <div class="row">
-            <div class="col-4 calls mx-auto">
+            <div class="col-12 col-xxl-4 calls mx-auto">
               <img src="/images/phone_icon.png" alt="Значок телефона" sizes="" srcset="">
               <a class="call" href="tel:+79180457345">+7-918-045-73-45</a>
             </div>
-            <div class="col-4 messengers" >
+            <div class="col-6 col-xl-4 d-none d-lg-block messengers" >
               <div class="row">
-                <div class="col-2">
+                <div class="col-6 col-xl-2">
                   <a href="https://api.whatsapp.com/send/?phone=7180457345" class="whatsapp">
                     <img src="/images/icon-whatsapp.png" alt="Значок Whatsapp">
                   </a>
                 </div>
-                <div class="col-4 text_messengers">
+                <div class="col-4 text_messengers d-none d-xxl-block">
                   <p>Напишите нам в Whatsapp</p>
                 </div>
-                <div class="col-2">
+                <div class="col-6 col-xl-2">
                   <a href="tg://resolve?domain=Kuban_diesel" class="telegram">
                     <img src="/images/icon-telegram.png" alt="Значок Telegram">
                   </a>
                 </div>
-                <div class="col-4 text_messengers">
+                <div class="col-4 text_messengers d-none d-xxl-block">
                   <p>Найдите нас в Telegram</p>
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-6 col-xl-4 d-none d-lg-block">
               <button type="button" class="btn btn-info btn-lg" data-bs-toggle="modal" data-bs-target="#modal_call_me">Перезвоните мне!</button>
               <div class="modal fade" id="modal_call_me" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -89,7 +89,7 @@
           </div>
           <!-- Второй ряд -->
           <div class="row " id="second_row">
-            <div class="col-8 align-self-center">
+            <div class="col-lg-12 col-xl-8 align-self-center">
               <form method="get" action="/catalog/find">
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                 <div class="input-group mb-3">
@@ -100,7 +100,7 @@
             </div>
 
             <!-- Вход в личный кабинет -->
-            <div class="col-2 align-self-center private_office">
+            <div class="col-6 col-xl-2 align-self-center private_office">
               <div sec:authorize="!isAuthenticated()">
                 <form th:action="@{/auth/login}" method="get">
                   <button class="btn btn-primary" type="submit">
@@ -123,7 +123,7 @@
             </div>
 
             <!-- Корзина заказов -->
-            <div class="col-2 align-self-center">
+            <div class="col-6 col-xl-2 align-self-center">
               <a href="/orders" class="basket">
                 <img src="/images/icon-basket.png" alt="Корзина">
               </a>
